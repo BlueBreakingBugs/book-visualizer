@@ -35,9 +35,12 @@
         android:id="@+id/add"
         app:rippleColor="@color/white"
         android:backgroundTint="@color/blue"
+        android:textColor="@color/white"
+        app:iconTint="@color/white"
         android:layout_margin="16dp"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
+        android:onClick="goToScannerActivity"
         app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
