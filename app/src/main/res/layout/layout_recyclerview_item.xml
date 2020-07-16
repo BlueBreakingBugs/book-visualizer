@@ -1,47 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:layout_width="match_parent"
+<LinearLayout
+    android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_height="wrap_content"
     xmlns:android="http://schemas.android.com/apk/res/android">
+
     <com.google.android.material.card.MaterialCardView
         android:layout_gravity="center"
         app:cardCornerRadius="10dp"
         app:cardElevation="3dp"
         app:rippleColor="@color/colorPrimary"
-        android:layout_marginTop="4dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginRight="4dp"
-        android:layout_marginBottom="6dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="10dp"
         android:layout_width="match_parent"
         android:clickable="true"
         android:id="@+id/selectad"
         app:cardBackgroundColor="@color/white"
-        android:layout_height="130dp">
-
+        android:layout_height="wrap_content">
 
         <LinearLayout
-
             android:layout_margin="10dp"
             android:orientation="horizontal"
             android:layout_gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-
                 <ImageView
-
                     android:background="@color/grey"
                     android:id="@+id/bookpic"
                     android:layout_gravity="center"
                     android:layout_width="110dp"
                     android:layout_height="110dp" />
 
-
                 <LinearLayout
                     android:layout_marginRight="5dp"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:orientation="vertical"
                     android:layout_marginLeft="20dp"
@@ -49,19 +46,16 @@
 
                     <TextView
                         android:id="@+id/title"
-
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-
                         android:ellipsize="end"
                         android:maxLines="1"
                         android:minWidth="200dp"
-
                         android:textColor="@color/black"
                         android:textSize="16sp" />
+
                     <TextView
                         android:ellipsize="end"
-
                         android:minWidth="150dp"
                         android:maxLines="2"
                         android:id="@+id/author"
@@ -80,6 +74,7 @@
                         android:minWidth="100dp"
                         android:textSize="12sp"
                         android:textStyle="bold" />
+
                     <TextView
                         android:id="@+id/isbn"
                         android:layout_width="wrap_content"
@@ -90,14 +85,17 @@
                         android:textSize="12sp"
                         android:textStyle="bold" />
 
-
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_gravity="end"
+                        android:padding="10dp"
+                        android:id="@+id/delete_icon"
+                        android:src="@drawable/ic_delete"
+                        android:layout_height="wrap_content"/>
 
                 </LinearLayout>
 
         </LinearLayout>
-
-
-
 
     </com.google.android.material.card.MaterialCardView>
 

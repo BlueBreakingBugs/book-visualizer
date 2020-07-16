@@ -19,6 +19,7 @@ import com.bumptech.glide.request.target.Target;
 import com.joblesscoders.arbook.R;
 import com.joblesscoders.arbook.details.DetailsActivity;
 import com.joblesscoders.arbook.pojo.Book;
+import com.joblesscoders.arbook.utils.StorageUtil;
 
 import java.util.List;
 
@@ -47,26 +48,36 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter {
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         final Book book = bookList.get(position);
-        holder = (BookHolder)holder;
+        holder = (BookHolder) holder;
         ((BookHolder) holder).booktitle.setText(book.getTitle());
         ((BookHolder) holder).bookauthor.setText(book.getAuthor()+"");
         ((BookHolder) holder).bookpublisher.setText(book.getPublisher()+"");
         ((BookHolder) holder).isbn.setText(book.getIsbn()+"");
+
         Glide.with(context)
                 .load(book.getThumbnail())
                 .into(((BookHolder) holder).bookpic);
-        ((BookHolder) holder).selectad.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(context, "Clicked", Toast.LENGTH_SHORT).show();
-                /*Intent intent = new Intent(context, DetailsActivity.class);
-                intent.putExtra("book", book);
-                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                context.startActivity(intent);*/
-            }
+
+        ((BookHolder) holder).selectad.setOnClickListener(v -> {
+            Toast.makeText(context, "Clicked", Toast.LENGTH_SHORT).show();
+            /*Intent intent = new Intent(context, DetailsActivity.class);
+            intent.putExtra("book", book);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            context.startActivity(intent);*/
         });
 
+        ((BookHolder) holder).delete_button.setOnClickListener(v -> {
+            StorageUtil.removeBookFromList(book.get_id(), context);
+            Toast.makeText(context, "Successfully removed the book!", Toast.LENGTH_SHORT).show();
+            removeBook(position);
+        });
 
+    }
+
+    public void removeBook(int position) {
+        bookList.remove(position);
+        notifyItemRemoved(position);
+        notifyItemRangeChanged(position, bookList.size());
     }
 
     @Override
@@ -81,7 +92,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter {
     public class BookHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         public ImageView bookpic;
         public TextView bookauthor,booktitle,bookpublisher,isbn;
-        public View selectad;
+        public View selectad, delete_button;
 
 
         public BookHolder(View itemView) {
@@ -92,13 +103,15 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter {
             isbn=itemView.findViewById(R.id.isbn);
             selectad=itemView.findViewById(R.id.selectad);
             bookpublisher = itemView.findViewById(R.id.bookpublisher);
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    bookItemClickListener.onItemClick(v, getAdapterPosition());
+            delete_button = itemView.findViewById(R.id.delete_icon);
 
-                }
-            });
+//            itemView.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    bookItemClickListener.onItemClick(v, getAdapterPosition());
+//
+//                }
+//            });
         }
 
         @Override
