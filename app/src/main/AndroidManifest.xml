@@ -3,7 +3,8 @@
     package="com.joblesscoders.arbook">
 
     <uses-permission android:name="android.permission.CAMERA" />
-
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-feature android:glEsVersion="0x00030000" android:required="true" />
     <uses-feature android:name="android.hardware.camera.ar" />
 
     <application

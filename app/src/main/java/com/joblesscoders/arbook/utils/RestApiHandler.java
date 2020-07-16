@@ -8,8 +8,9 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 public class RestApiHandler {
-    private static final String BASE_URL = "";
-
+    private static final String BASE_URL = "https://nawtz1hine.execute-api.ap-south-1.amazonaws.com/Production/";
+    private static String SUCCESS = "success";
+    private static String FAILURE = "failure";
     private static Retrofit getRetrofitInstance() {
 
         Gson gson = new GsonBuilder().setLenient().create();
