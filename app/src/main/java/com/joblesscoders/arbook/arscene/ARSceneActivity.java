@@ -17,6 +17,8 @@ import com.google.ar.core.Anchor;
 import com.google.ar.core.HitResult;
 import com.google.ar.core.Plane;
 import com.google.ar.sceneform.AnchorNode;
+import com.google.ar.sceneform.math.Quaternion;
+import com.google.ar.sceneform.math.Vector3;
 import com.google.ar.sceneform.rendering.ModelRenderable;
 import com.google.ar.sceneform.ux.ArFragment;
 import com.google.ar.sceneform.ux.TransformableNode;
@@ -27,7 +29,7 @@ public class ARSceneActivity extends AppCompatActivity {
     private static final String TAG = ARSceneActivity.class.getSimpleName();
     private static final double MIN_OPENGL_VERSION = 3.0;
 
-    private ArFragment arFragment;
+    private CustomARFragment arFragment;
     private ModelRenderable andyRenderable;
 
     @Override
@@ -41,7 +43,7 @@ public class ARSceneActivity extends AppCompatActivity {
             return;
         }
         setContentView(R.layout.activity_arscene);
-        arFragment = (ArFragment) getSupportFragmentManager().findFragmentById(R.id.ux_fragment);
+        arFragment = (CustomARFragment) getSupportFragmentManager().findFragmentById(R.id.ux_fragment);
 
         // When you build a Renderable, Sceneform loads its resources in the background while returning
         // a CompletableFuture. Call thenAccept(), handle(), or check isDone() before calling get().
@@ -73,6 +75,8 @@ public class ARSceneActivity extends AppCompatActivity {
                     TransformableNode andy = new TransformableNode(arFragment.getTransformationSystem());
                     andy.setParent(anchorNode);
                     andy.setRenderable(andyRenderable);
+                    andy.setLocalPosition(new Vector3(0,0.25f,0));
+                    andy.setLocalRotation(Quaternion.axisAngle(new Vector3(0f, 1f, 0f), 180f));
                     andy.select();
                 });
     }

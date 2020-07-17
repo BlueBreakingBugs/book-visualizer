@@ -51,6 +51,7 @@ public class AugmentedImageFragment extends ArFragment {
 
   // This is a pre-created database containing the sample image.
   private  String IMAGE_DATABASE = "mydb.imgdb" ;
+  private  String HEART_DATABASE = "heartdb.imgdb" ;
 
   // Augmented image configuration and rendering.
   // Load a single image (true) or a pre-generated image database (false).
@@ -97,6 +98,15 @@ public class AugmentedImageFragment extends ArFragment {
   @Override
   protected Config getSessionConfiguration(Session session) {
     Config config = super.getSessionConfiguration(session);
+
+    /*
+    config.setUpdateMode(Config.UpdateMode.LATEST_CAMERA_IMAGE);
+    config.setFocusMode(Config.FocusMode.AUTO);
+    config.setDepthMode(Config.DepthMode.AUTOMATIC);
+    session.configure(config);
+    this.getArSceneView().setupSession(session);
+     */
+
     if (!setupAugmentedImageDatabase(config, session)) {
       //TODO : replace with snackbar
       Toast.makeText(getContext(), "Could not setup augmented image database", Toast.LENGTH_SHORT).show();
@@ -134,7 +144,7 @@ public class AugmentedImageFragment extends ArFragment {
     } else*/
       // This is an alternative way to initialize an AugmentedImageDatabase instance,
       // load a pre-existing augmented image database.
-      try (InputStream is = getContext().getAssets().open(IMAGE_DATABASE)) {
+      try (InputStream is = getContext().getAssets().open(HEART_DATABASE)) {
         augmentedImageDatabase = AugmentedImageDatabase.deserialize(session, is);
       } catch (IOException e) {
         Log.e(TAG, "IO exception loading augmented image database.", e);

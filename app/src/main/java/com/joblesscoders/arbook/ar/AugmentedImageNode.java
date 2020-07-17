@@ -81,7 +81,7 @@ public class AugmentedImageNode extends AnchorNode {
     TransformableNode cornerNode;
 
     // Upper left corner.
-    localPosition.set(0, 0, 0);
+    localPosition.set(0, 0.25f, 0);
 
     cornerNode = new TransformableNode(arFragment.getTransformationSystem());
     cornerNode.setLocalScale(new Vector3(0.05f,0.05f,0.05f));
