@@ -73,11 +73,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter {
     }
 
     public static class ContentHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        ImageView thumb;
-        TextView title;
-        TextView type;
-        TextView description;
-        View root;
+        private ImageView thumb;
+        private TextView title;
+        private TextView type;
+        private TextView description;
+        private View root;
 
         public ContentHolder(View itemView) {
             super(itemView);

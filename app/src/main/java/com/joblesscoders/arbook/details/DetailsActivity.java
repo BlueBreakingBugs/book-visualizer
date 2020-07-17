@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.joblesscoders.arbook.R;
 import com.joblesscoders.arbook.ar.ARActivity;
+import com.joblesscoders.arbook.arscene.ARSceneActivity;
 import com.joblesscoders.arbook.pojo.Contents;
 
 public class DetailsActivity extends AppCompatActivity {
@@ -53,7 +54,10 @@ public class DetailsActivity extends AppCompatActivity {
     }
 
     public void startARSession(View view) {
-
+        Intent intent = new Intent(this, ARSceneActivity.class);
+       // intent.addFlags("")
+        intent.putExtra("content",content);
+        startActivity(intent);
     }
 
     @Override
