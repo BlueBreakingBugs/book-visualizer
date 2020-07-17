@@ -7,7 +7,7 @@
           runtime_name: 'craneo',
         },
       ],
-      path: 'src/main/res/raw/craneo.fbx',
+      path: 'sampledata/craneo.fbx',
     },
   ],
   materials: [
@@ -97,7 +97,7 @@
       'BoneWeights',
     ],
     collision: {},
-    file: 'src/main/res/raw/craneo.fbx',
+    file: 'sampledata/craneo.fbx',
     name: 'craneo',
     recenter: 'root',
   },

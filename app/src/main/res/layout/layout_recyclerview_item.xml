@@ -51,8 +51,8 @@
                         android:ellipsize="end"
                         android:maxLines="1"
                         android:minWidth="200dp"
-                        android:textColor="@color/black"
-                        android:textSize="16sp" />
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="18sp" />
 
                     <TextView
                         android:ellipsize="end"
@@ -71,6 +71,7 @@
                         android:layout_height="14dp"
                         android:layout_marginTop="5dp"
                         android:maxLines="1"
+                        android:ellipsize="end"
                         android:minWidth="100dp"
                         android:textSize="12sp"
                         android:textStyle="bold" />

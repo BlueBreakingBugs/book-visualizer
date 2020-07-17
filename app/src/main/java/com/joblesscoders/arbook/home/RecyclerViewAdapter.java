@@ -53,7 +53,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter {
         ((BookHolder) holder).booktitle.setText(book.getTitle());
         ((BookHolder) holder).bookauthor.setText(listToString(book.getAuthor()));
         ((BookHolder) holder).bookpublisher.setText(book.getPublisher()+"");
-        ((BookHolder) holder).isbn.setText(book.getIsbn()+"");
+        ((BookHolder) holder).isbn.setText("ISBN : "+book.getIsbn()+"");
 
         Glide.with(context)
                 .load(book.getThumbnail())

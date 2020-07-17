@@ -47,8 +47,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 }
 
-
-sceneform.asset('src/main/res/raw/craneo.fbx',
+sceneform.asset('sampledata/craneo.fbx',
         'default',
-        'src/main/res/raw/craneo.sfa',
+        'sampledata/craneo.sfa',
         'src/main/assets/craneo')

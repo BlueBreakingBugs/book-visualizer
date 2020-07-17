@@ -14,7 +14,6 @@
         android:background="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
@@ -22,31 +21,21 @@
             app:title="Add a new book" />
     </com.google.android.material.appbar.AppBarLayout>
 
-    <com.journeyapps.barcodescanner.DecoratedBarcodeView
-        android:layout_width="200dp"
-        android:layout_height="0dp"
-        android:layout_margin="20dp"
-        android:id="@+id/decorated_barcode_view"
-        android:visibility="gone"
-        app:layout_constraintBottom_toTopOf="@+id/materialButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
 
-    </com.journeyapps.barcodescanner.DecoratedBarcodeView>
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/materialButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="startScan"
-        android:text="Scan"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        <com.journeyapps.barcodescanner.DecoratedBarcodeView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/decorated_barcode_view"
+            android:visibility="gone"
+           >
+        </com.journeyapps.barcodescanner.DecoratedBarcodeView>
 
-    </com.google.android.material.button.MaterialButton>
 
     <ProgressBar
         android:layout_width="wrap_content"
@@ -56,7 +45,7 @@
         app:layout_constraintBottom_toTopOf="@+id/card_root"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/materialButton" />
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
     <com.google.android.material.circularreveal.cardview.CircularRevealCardView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -65,7 +54,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/materialButton">
+        app:layout_constraintTop_toTopOf="parent">
         <LinearLayout
             android:layout_margin="10dp"
             android:gravity="center"
@@ -75,18 +64,15 @@
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/book_thumb"
-                android:layout_width="100dp"
-                android:layout_height="100dp"/>
+                android:layout_width="200dp"
+                android:layout_height="200dp"/>
             <TextView
                 android:layout_margin="10dp"
                 android:text="Mysterious forces of nature"
                 android:id="@+id/qr_code_data"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/materialButton" />
+               />
             <com.google.android.material.button.MaterialButton
                 android:text="Add to library"
                 android:onClick="addToLibrary"
