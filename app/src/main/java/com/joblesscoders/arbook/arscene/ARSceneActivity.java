@@ -23,12 +23,13 @@ import com.google.ar.sceneform.rendering.ModelRenderable;
 import com.google.ar.sceneform.ux.ArFragment;
 import com.google.ar.sceneform.ux.TransformableNode;
 import com.joblesscoders.arbook.R;
+import com.joblesscoders.arbook.pojo.Contents;
 
 public class ARSceneActivity extends AppCompatActivity {
 
     private static final String TAG = ARSceneActivity.class.getSimpleName();
     private static final double MIN_OPENGL_VERSION = 3.0;
-
+    private Contents content;
     private CustomARFragment arFragment;
     private ModelRenderable andyRenderable;
 
@@ -43,12 +44,13 @@ public class ARSceneActivity extends AppCompatActivity {
             return;
         }
         setContentView(R.layout.activity_arscene);
+        content = getIntent().getParcelableExtra("content");
         arFragment = (CustomARFragment) getSupportFragmentManager().findFragmentById(R.id.ux_fragment);
 
         // When you build a Renderable, Sceneform loads its resources in the background while returning
         // a CompletableFuture. Call thenAccept(), handle(), or check isDone() before calling get().
         ModelRenderable.builder()
-                .setSource(this, Uri.parse("models/skull.sfb"))
+                .setSource(this, Uri.parse(content.getTitle().toLowerCase()+".sfb"))
                 .build()
                 .thenAccept(renderable -> andyRenderable = renderable)
                 .exceptionally(

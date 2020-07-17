@@ -59,7 +59,7 @@ public class DetailsActivity extends AppCompatActivity {
        // progressDialog.show();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             ModelRenderable.builder()
-                    .setSource(this, Uri.parse("models/skull.sfb"))
+                    .setSource(this, Uri.parse(content.getTitle().toLowerCase()+".sfb"))
                     .build()
                     .thenAccept(renderable ->{
                         addToScene(renderable);
@@ -131,7 +131,7 @@ public class DetailsActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         // And this for title
-        getSupportActionBar().setTitle(content.getTitle());
+        getSupportActionBar().setTitle("Details");
     }
 
     public void startARSession(View view) {

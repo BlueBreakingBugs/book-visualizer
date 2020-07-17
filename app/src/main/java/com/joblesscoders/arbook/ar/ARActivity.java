@@ -47,6 +47,12 @@ public class ARActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    protected void onPause() {
+
+        super.onPause();
+    }
+
     private void onUpdateFrame(FrameTime frameTime) {
         Frame frame = arFragment.getArSceneView().getArFrame();
 
@@ -72,8 +78,11 @@ public class ARActivity extends AppCompatActivity {
 
                     // Create a new anchor for newly found images.
                     if (!augmentedImageMap.containsKey(augmentedImage)) {
-                        AugmentedImageNode node = new AugmentedImageNode(this,arFragment,"skull2.sfb");
-                        Log.e("nigga","image found");
+                        String name = augmentedImage.getName().toLowerCase().substring(0,augmentedImage.getName().lastIndexOf('.'));
+                        Toast.makeText(this, name+"", Toast.LENGTH_SHORT).show();
+
+                        AugmentedImageNode node = new AugmentedImageNode(this,arFragment, name+".sfb");
+                        Log.e("model","image found");
                         node.setImage(augmentedImage);
                         augmentedImageMap.put(augmentedImage, node);
                         arFragment.getArSceneView().getScene().addChild(node);

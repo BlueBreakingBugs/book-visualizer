@@ -50,8 +50,8 @@ public class AugmentedImageFragment extends ArFragment {
   private static final String DEFAULT_IMAGE_NAME = "default.jpg";
 
   // This is a pre-created database containing the sample image.
-  private  String IMAGE_DATABASE = "mydb.imgdb" ;
-  private  String HEART_DATABASE = "heartdb.imgdb" ;
+  private  String IMAGE_DATABASE = "database.imgdb" ;
+  //private  String HEART_DATABASE = "heartdb.imgdb" ;
 
   // Augmented image configuration and rendering.
   // Load a single image (true) or a pre-generated image database (false).
@@ -144,7 +144,7 @@ public class AugmentedImageFragment extends ArFragment {
     } else*/
       // This is an alternative way to initialize an AugmentedImageDatabase instance,
       // load a pre-existing augmented image database.
-      try (InputStream is = getContext().getAssets().open(HEART_DATABASE)) {
+      try (InputStream is = getContext().getAssets().open(IMAGE_DATABASE)) {
         augmentedImageDatabase = AugmentedImageDatabase.deserialize(session, is);
       } catch (IOException e) {
         Log.e(TAG, "IO exception loading augmented image database.", e);
