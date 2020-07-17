@@ -56,3 +56,19 @@ sceneform.asset('sampledata/12140_Skull_v3_L2.obj',
         'default',
         'sampledata/12140_Skull_v3_L2.sfa',
         'src/main/assets/12140_Skull_v3_L2')
+
+
+sceneform.asset('sampledata/13041_Beagle_v1_L1.obj',
+        'default',
+        'sampledata/13041_Beagle_v1_L1.sfa',
+        'src/main/assets/13041_Beagle_v1_L1')
+
+sceneform.asset('sampledata/12262_Crocodile_v1_l2.obj',
+        'default',
+        'sampledata/12262_Crocodile_v1_l2.sfa',
+        'src/main/assets/12262_Crocodile_v1_l2')
+
+sceneform.asset('sampledata/10026_Horse_v01-it2.obj',
+        'default',
+        'sampledata/10026_Horse_v01-it2.sfa',
+        'src/main/assets/10026_Horse_v01-it2')

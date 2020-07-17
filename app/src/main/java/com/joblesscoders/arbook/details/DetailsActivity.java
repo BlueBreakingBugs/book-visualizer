@@ -8,11 +8,9 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
 import com.google.ar.core.Session;
 import com.google.ar.core.exceptions.CameraNotAvailableException;
 import com.google.ar.sceneform.Camera;
@@ -22,7 +20,6 @@ import com.google.ar.sceneform.math.Quaternion;
 import com.google.ar.sceneform.math.Vector3;
 import com.google.ar.sceneform.rendering.ModelRenderable;
 import com.joblesscoders.arbook.R;
-import com.joblesscoders.arbook.ar.ARActivity;
 import com.joblesscoders.arbook.arscene.ARSceneActivity;
 import com.joblesscoders.arbook.pojo.Contents;
 
@@ -62,7 +59,7 @@ public class DetailsActivity extends AppCompatActivity {
        // progressDialog.show();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             ModelRenderable.builder()
-                    .setSource(this, Uri.parse("craneo.sfb"))
+                    .setSource(this, Uri.parse("models/skull.sfb"))
                     .build()
                     .thenAccept(renderable ->{
                         addToScene(renderable);

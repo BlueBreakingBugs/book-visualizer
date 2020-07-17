@@ -1,0 +1,53 @@
+{
+  materials: [
+    {
+      name: '13041',
+      parameters: [
+        {
+          baseColor: '13041_Beagle_diffuse',
+        },
+        {
+          baseColorTint: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          metallic: 1,
+        },
+        {
+          roughness: 0.408248,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+    ],
+    collision: {},
+    file: 'sampledata/13041_Beagle_v1_L1.obj',
+    name: '13041_Beagle_v1_L1',
+    recenter: 'root',
+    scale: 0.042178,
+  },
+  samplers: [
+    {
+      file: 'sampledata/13041_Beagle_diffuse.jpg',
+      name: '13041_Beagle_diffuse',
+      params: {
+        usage_type: 'Data',
+      },
+      pipeline_name: '13041_Beagle_diffuse.jpg',
+    },
+  ],
+  version: '0.54:2',
+}
