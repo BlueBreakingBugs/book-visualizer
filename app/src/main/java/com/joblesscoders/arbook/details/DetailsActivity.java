@@ -2,6 +2,7 @@ package com.joblesscoders.arbook.details;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -9,6 +10,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.joblesscoders.arbook.R;
+import com.joblesscoders.arbook.ar.ARActivity;
 import com.joblesscoders.arbook.pojo.Contents;
 
 public class DetailsActivity extends AppCompatActivity {
@@ -51,6 +53,9 @@ public class DetailsActivity extends AppCompatActivity {
     }
 
     public void startARSession(View view) {
+        Intent intent = new Intent(this, ARActivity.class);
+        intent.putExtra("content",content);
+        startActivity(intent);
     }
 
     @Override

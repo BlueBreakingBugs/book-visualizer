@@ -42,7 +42,6 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         progressBar = findViewById(R.id.progress_bar);
         initRecyclerView();
-
         fetchBookData();
     }
 

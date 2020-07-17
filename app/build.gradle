@@ -41,7 +41,7 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-gson:2.6.0'
     implementation 'com.google.ar:core:1.18.0'
     implementation 'com.github.bumptech.glide:glide:4.11.0'
-    implementation 'com.google.ar.sceneform.ux:sceneform-ux:1.17.0'
+    implementation 'com.google.ar.sceneform.ux:sceneform-ux:1.15.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
@@ -51,3 +51,8 @@ sceneform.asset('sampledata/craneo.fbx',
         'default',
         'sampledata/craneo.sfa',
         'src/main/assets/craneo')
+
+sceneform.asset('sampledata/12140_Skull_v3_L2.obj',
+        'default',
+        'sampledata/12140_Skull_v3_L2.sfa',
+        'src/main/assets/12140_Skull_v3_L2')
