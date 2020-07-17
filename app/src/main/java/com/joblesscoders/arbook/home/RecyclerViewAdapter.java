@@ -17,6 +17,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
 import com.joblesscoders.arbook.R;
+import com.joblesscoders.arbook.book.BookActivity;
 import com.joblesscoders.arbook.details.DetailsActivity;
 import com.joblesscoders.arbook.pojo.Book;
 import com.joblesscoders.arbook.utils.StorageUtil;
@@ -50,7 +51,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter {
         final Book book = bookList.get(position);
         holder = (BookHolder) holder;
         ((BookHolder) holder).booktitle.setText(book.getTitle());
-        ((BookHolder) holder).bookauthor.setText(book.getAuthor()+"");
+        ((BookHolder) holder).bookauthor.setText(listToString(book.getAuthor()));
         ((BookHolder) holder).bookpublisher.setText(book.getPublisher()+"");
         ((BookHolder) holder).isbn.setText(book.getIsbn()+"");
 
@@ -59,11 +60,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter {
                 .into(((BookHolder) holder).bookpic);
 
         ((BookHolder) holder).selectad.setOnClickListener(v -> {
-            Toast.makeText(context, "Clicked", Toast.LENGTH_SHORT).show();
-            /*Intent intent = new Intent(context, DetailsActivity.class);
+//            Toast.makeText(context, "Clicked", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(context, BookActivity.class);
             intent.putExtra("book", book);
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            context.startActivity(intent);*/
+            context.startActivity(intent);
         });
 
         ((BookHolder) holder).delete_button.setOnClickListener(v -> {
@@ -74,6 +75,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter {
 
     }
 
+    public String listToString(List<String> list) {
+        StringBuilder s = new StringBuilder();
+        for (String st: list) {
+            s.append(st).append(" ");
+        }
+        return s.toString();
+    }
     public void removeBook(int position) {
         bookList.remove(position);
         notifyItemRemoved(position);
