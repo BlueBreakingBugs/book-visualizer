@@ -4,11 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
 import com.joblesscoders.arbook.R;
+import com.joblesscoders.arbook.ar.ARActivity;
 import com.joblesscoders.arbook.book.RecyclerViewAdapter;
 import com.joblesscoders.arbook.pojo.Book;
 import com.joblesscoders.arbook.pojo.Contents;
@@ -67,5 +69,8 @@ public class BookActivity extends AppCompatActivity {
     }
 
     public void startARSession(View view) {
+        Intent intent = new Intent(this, ARActivity.class);
+        intent.putExtra("book",book);
+        startActivity(intent);
     }
 }

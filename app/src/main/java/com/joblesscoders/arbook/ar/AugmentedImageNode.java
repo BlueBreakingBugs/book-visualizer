@@ -19,12 +19,15 @@ package com.joblesscoders.arbook.ar;
 import android.content.Context;
 import android.net.Uri;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.google.ar.core.AugmentedImage;
 import com.google.ar.sceneform.AnchorNode;
 import com.google.ar.sceneform.Node;
 import com.google.ar.sceneform.math.Vector3;
 import com.google.ar.sceneform.rendering.ModelRenderable;
+import com.google.ar.sceneform.ux.ArFragment;
+import com.google.ar.sceneform.ux.TransformableNode;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -35,11 +38,15 @@ public class AugmentedImageNode extends AnchorNode {
   // The augmented image represented by this node.
   private AugmentedImage image;
   private String modelname;
+  private Context context;
+  private ArFragment arFragment;
 
   private static CompletableFuture<ModelRenderable> model;
 
-  public AugmentedImageNode(Context context,String modelname) {
+  public AugmentedImageNode(Context context, ArFragment arFragment, String modelname) {
     this.modelname = modelname;
+    this.context = context;
+    this.arFragment = arFragment;
     // Upon construction, start loading the models for the corners of the frame.
     if (model == null) {
       model =
@@ -51,6 +58,8 @@ public class AugmentedImageNode extends AnchorNode {
 
   @SuppressWarnings({"AndroidApiChecker", "FutureReturnValueIgnored"})
   public void setImage(AugmentedImage image) {
+    Log.e("nigga", "loading");
+    //Toast.makeText(context, "loading", Toast.LENGTH_SHORT).show();
     this.image = image;
 
     // If any of the models are not loaded, then recurse when all are loaded.
@@ -69,16 +78,17 @@ public class AugmentedImageNode extends AnchorNode {
 
     // Make the 4 corner nodes.
     Vector3 localPosition = new Vector3();
-    Node cornerNode;
+    TransformableNode cornerNode;
 
     // Upper left corner.
     localPosition.set(0, 0, 0);
 
-    cornerNode = new Node();
+    cornerNode = new TransformableNode(arFragment.getTransformationSystem());
     cornerNode.setLocalScale(new Vector3(0.05f,0.05f,0.05f));
     cornerNode.setParent(this);
     cornerNode.setLocalPosition(localPosition);
     cornerNode.setRenderable(model.getNow(null));
+    cornerNode.select();
   }
 
   public AugmentedImage getImage() {

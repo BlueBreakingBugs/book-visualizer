@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -15,14 +16,16 @@ import com.google.ar.sceneform.AnchorNode;
 import com.google.ar.sceneform.FrameTime;
 import com.google.ar.sceneform.ux.ArFragment;
 import com.joblesscoders.arbook.R;
+import com.joblesscoders.arbook.pojo.Book;
 import com.joblesscoders.arbook.pojo.Contents;
 
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class ARActivity extends AppCompatActivity {
-    private Contents content;
+    private List<Contents> contents;
     private ArFragment arFragment;
     private ImageView fitToScanView;
     private final Map<AugmentedImage, AugmentedImageNode> augmentedImageMap = new HashMap<>();
@@ -30,7 +33,8 @@ public class ARActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ar);
-        content = getIntent().getParcelableExtra("content");
+        Book book= getIntent().getParcelableExtra("book");
+        contents = book.getContents();
         arFragment = (ArFragment) getSupportFragmentManager().findFragmentById(R.id.ux_fragment);
         fitToScanView = findViewById(R.id.image_view_fit_to_scan);
         arFragment.getArSceneView().getScene().addOnUpdateListener(this::onUpdateFrame);
@@ -59,7 +63,7 @@ public class ARActivity extends AppCompatActivity {
                     // When an image is in PAUSED state, but the camera is not PAUSED, it has been detected,
                     // but not yet tracked.
                     String text = "Detected Image " + augmentedImage.getName();
-                    Toast.makeText(this, text+"", Toast.LENGTH_SHORT).show();
+                   // Toast.makeText(this, text+"", Toast.LENGTH_SHORT).show();
                     break;
 
                 case TRACKING:
@@ -68,7 +72,8 @@ public class ARActivity extends AppCompatActivity {
 
                     // Create a new anchor for newly found images.
                     if (!augmentedImageMap.containsKey(augmentedImage)) {
-                        AugmentedImageNode node = new AugmentedImageNode(this,"skull2.sfb");
+                        AugmentedImageNode node = new AugmentedImageNode(this,arFragment,"skull2.sfb");
+                        Log.e("nigga","image found");
                         node.setImage(augmentedImage);
                         augmentedImageMap.put(augmentedImage, node);
                         arFragment.getArSceneView().getScene().addChild(node);

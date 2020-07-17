@@ -53,9 +53,7 @@ public class DetailsActivity extends AppCompatActivity {
     }
 
     public void startARSession(View view) {
-        Intent intent = new Intent(this, ARActivity.class);
-        intent.putExtra("content",content);
-        startActivity(intent);
+
     }
 
     @Override

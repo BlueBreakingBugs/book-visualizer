@@ -85,7 +85,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter {
             title = itemView.findViewById(R.id.title);
             type = itemView.findViewById(R.id.type);
             description = itemView.findViewById(R.id.description);
-            root = itemView.getRootView();
+            root = itemView.findViewById(R.id.selectad);
             itemView.setOnClickListener(v -> {
 //                    bookItemClickListener.onItemClick(v, getAdapterPosition());
                 // TODO, start floating AR Session
