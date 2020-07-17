@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     tools:context=".arscene.ARSceneActivity">
 
-    <fragment android:name="com.google.ar.sceneform.ux.ArFragment"
+    <fragment
+        android:name="com.joblesscoders.arbook.arscene.CustomARFragment"
         android:id="@+id/ux_fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
