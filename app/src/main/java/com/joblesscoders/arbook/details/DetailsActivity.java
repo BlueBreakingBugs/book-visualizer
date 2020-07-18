@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.TextView;
@@ -18,10 +19,13 @@ import com.google.ar.sceneform.Scene;
 import com.google.ar.sceneform.SceneView;
 import com.google.ar.sceneform.math.Quaternion;
 import com.google.ar.sceneform.math.Vector3;
+import com.google.ar.sceneform.rendering.Color;
 import com.google.ar.sceneform.rendering.ModelRenderable;
 import com.joblesscoders.arbook.R;
 import com.joblesscoders.arbook.arscene.ARSceneActivity;
 import com.joblesscoders.arbook.pojo.Contents;
+
+import java.util.Arrays;
 
 public class DetailsActivity extends AppCompatActivity {
     private Contents content;
@@ -49,7 +53,7 @@ public class DetailsActivity extends AppCompatActivity {
 
     private void initSceneView() {
         Camera camera = mSceneView.getScene().getCamera();
-        camera.setLocalRotation(Quaternion.axisAngle(Vector3.right(), -30.0f));
+//        camera.setLocalRotation(Quaternion.axisAngle(Vector3.right(), -30.0f));
         mScene = mSceneView.getScene();
         load3dModel();
 
@@ -62,7 +66,7 @@ public class DetailsActivity extends AppCompatActivity {
                     .setSource(this, Uri.parse(content.getTitle().toLowerCase()+".sfb"))
                     .build()
                     .thenAccept(renderable ->{
-                        addToScene(renderable);
+                        addToScene(renderable, content);
                        // progressDialog.dismiss();
                         //loading_image.setVisibility(View.GONE);
 
@@ -78,16 +82,28 @@ public class DetailsActivity extends AppCompatActivity {
         }
     }
 
-    private void addToScene(ModelRenderable renderable) {
+    private void addToScene(ModelRenderable renderable, Contents content) {
         node = new RotatingNode(true, false, 0);
-        node.setRenderable(renderable);
+//        node.setRenderable(renderable);
+        setColorTint(renderable, node);
         node.setParent(mScene);
-      //  node.setWorldScale(new Vector3(0.6f, 0.6f, 0.6f));
-        node.setLocalPosition(new Vector3(0f, -0.5f, -.5f));
-        mScene.addChild(node);
+        float scale[] = content.getScale();
+        Log.e("DetailsActivity", Arrays.toString(scale));
 
+        node.setLocalPosition(new Vector3(0f, -.5f, -1f));
+        mScene.addChild(node);
     }
 
+    public void setColorTint(ModelRenderable originalRenderable, RotatingNode node) {
+        ModelRenderable newColorCopyofRenderable = originalRenderable.makeCopy();
+        newColorCopyofRenderable.getMaterial().setFloat3("baseColorTint",
+                new Color(android.graphics.Color.rgb(255,0,0)));
+        node.setRenderable(newColorCopyofRenderable);
+    }
+
+    public void rotateModel(RotatingNode node, Contents content) {
+        // TODO
+    }
     @Override
     protected void onResume() {
         super.onResume();

@@ -47,21 +47,10 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 }
 
-
-sceneform.asset('sampledata/beagle/13041_Beagle_v1_L1.obj',
-        'default',
-        'sampledata/beagle/13041_Beagle_v1_L1.sfa',
-        'src/main/assets/13041_Beagle_v1_L1')
-
 sceneform.asset('sampledata/crocodile/12262_Crocodile_v1_l2.obj',
         'default',
         'sampledata/crocodile/12262_Crocodile_v1_l2.sfa',
         'src/main/assets/12262_Crocodile_v1_l2')
-
-sceneform.asset('sampledata/horse/10026_Horse_v01-it2.obj',
-        'default',
-        'sampledata/horse/10026_Horse_v01-it2.sfa',
-        'src/main/assets/10026_Horse_v01-it2')
 
 sceneform.asset('sampledata/skull/12140_Skull_v3_L2.obj',
         'default',
@@ -73,3 +62,21 @@ sceneform.asset('sampledata/heart/corazon_armablanca.fbx',
         'default',
         'sampledata/heart/corazon_armablanca.sfa',
         'src/main/assets/corazon_armablanca')
+
+sceneform.asset('sampledata/rendered/skull.fbx',
+        'default',
+        'sampledata/rendered/skull.sfa',
+        'src/main/assets/skull')
+
+
+
+sceneform.asset('sampledata/rendered/horse.fbx',
+        'default',
+        'sampledata/rendered/horse.sfa',
+        'src/main/assets/horse')
+
+
+sceneform.asset('sampledata/rendered/brain.fbx',
+        'default',
+        'sampledata/rendered/brain.sfa',
+        'src/main/assets/brain')
