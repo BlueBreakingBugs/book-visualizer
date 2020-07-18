@@ -24,7 +24,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class ARActivity extends AppCompatActivity {
+public class AugmentedImagesActivity extends AppCompatActivity {
     private List<Contents> contents;
     private ArFragment arFragment;
     private ImageView fitToScanView;
@@ -49,8 +49,15 @@ public class ARActivity extends AppCompatActivity {
 
     @Override
     protected void onPause() {
+        arFragment.onPause();
 
         super.onPause();
+    }
+
+    @Override
+    protected void onDestroy() {
+        arFragment.onDestroy();
+        super.onDestroy();
     }
 
     private void onUpdateFrame(FrameTime frameTime) {
@@ -80,6 +87,7 @@ public class ARActivity extends AppCompatActivity {
                     if (!augmentedImageMap.containsKey(augmentedImage)) {
                         String name = augmentedImage.getName().toLowerCase().substring(0,augmentedImage.getName().lastIndexOf('.'));
                         Toast.makeText(this, name+"", Toast.LENGTH_SHORT).show();
+                        Log.e("hello",name);
 
                         AugmentedImageNode node = new AugmentedImageNode(this,arFragment, name+".sfb");
                         Log.e("model","image found");
@@ -94,5 +102,6 @@ public class ARActivity extends AppCompatActivity {
                     break;
             }
         }
+
     }
 }
