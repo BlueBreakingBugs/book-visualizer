@@ -57,11 +57,6 @@ sceneform.asset('sampledata/rendered/brain.fbx',
         'sampledata/rendered/brain.sfa',
         'src/main/assets/brain')
 
-sceneform.asset('sampledata/rendered/crocodile.fbx',
-        'default',
-        'sampledata/rendered/crocodile.sfa',
-        'src/main/assets/crocodile')
-
 sceneform.asset('sampledata/rendered/beagle.glb',
         'default',
         'sampledata/rendered/beagle.sfa',
@@ -71,3 +66,9 @@ sceneform.asset('sampledata/rendered/horse.glb',
         'default',
         'sampledata/rendered/horse.sfa',
         'src/main/assets/horse')
+
+
+sceneform.asset('sampledata/rendered/crocodile.glb',
+        'default',
+        'sampledata/rendered/crocodile.sfa',
+        'src/main/assets/crocodile')

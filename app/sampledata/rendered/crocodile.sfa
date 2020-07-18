@@ -1,15 +1,10 @@
 {
-  animations: [
-    {
-      path: 'sampledata/rendered/crocodile.fbx',
-    },
-  ],
   materials: [
     {
-      name: '14___Default.001',
+      name: '14___Default.002',
       parameters: [
         {
-          baseColor: [
+          baseColorFactor: [
             1,
             1,
             1,
@@ -17,31 +12,57 @@
           ],
         },
         {
-          baseColorMap: '12262_Crocodile_diff',
+          baseColor: '516924868aa5272f994d6b622e67ccb72fe0e65a',
         },
         {
-          normalMap: null,
+          diffuseColorFactor: null,
         },
         {
-          interpolatedColor: null,
+          diffuseColor: null,
         },
         {
-          metallic: 0,
+          normal: null,
         },
         {
-          metallicMap: null,
+          metallicFactor: 0,
         },
         {
-          roughness: 1,
+          roughnessFactor: 0.83333299999999999,
         },
         {
-          roughnessMap: null,
+          specularFactor: null,
+        },
+        {
+          glossinessFactor: null,
+        },
+        {
+          specularGlossiness: null,
+        },
+        {
+          specularGlossinessCalculation: null,
+        },
+        {
+          metallicRoughness: null,
+        },
+        {
+          occlusion: null,
+        },
+        {
+          emissiveFactor: [
+            0,
+            0,
+            0,
+            1,
+          ],
+        },
+        {
+          emissive: null,
         },
         {
           opacity: null,
         },
       ],
-      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+      source: 'build/sceneform_sdk/default_materials/gltf_material.sfm',
     },
   ],
   model: {
@@ -49,25 +70,17 @@
       'Position',
       'TexCoord',
       'Orientation',
-      'BoneIndices',
-      'BoneWeights',
     ],
     collision: {},
-    file: 'sampledata/rendered/crocodile.fbx',
+    file: 'sampledata/rendered/crocodile.glb',
     name: 'crocodile',
     recenter: 'root',
-    scale: 0.011617999999999999,
+    scale: 0.0382059,
   },
   samplers: [
     {
-      file: '/media/krishna/storage/Downloads/3d models/croc/12262_Crocodile_diff.jpg',
-      name: '12262_Crocodile_diff',
-      pipeline_name: '/media/krishna/storage/Downloads/3d models/croc/12262_Crocodile_diff.jpg',
-    },
-    {
-      file: '/media/krishna/storage/Downloads/3d models/croc/12262_Crocodile_spec.jpg',
-      name: '12262_Crocodile_spec',
-      pipeline_name: '/media/krishna/storage/Downloads/3d models/croc/12262_Crocodile_spec.jpg',
+      name: '516924868aa5272f994d6b622e67ccb72fe0e65a',
+      pipeline_name: '*0',
     },
   ],
   version: '0.54:2',
