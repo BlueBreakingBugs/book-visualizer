@@ -1,53 +1,10 @@
 {
-  animations: [
-    {
-      path: 'sampledata/rendered/horse.fbx',
-    },
-  ],
   materials: [
     {
-      name: 'Material',
+      name: '13___Default.001',
       parameters: [
         {
-          baseColor: [
-            0.80000000000000004,
-            0.80000000000000004,
-            0.80000000000000004,
-            1,
-          ],
-        },
-        {
-          baseColorMap: null,
-        },
-        {
-          normalMap: null,
-        },
-        {
-          interpolatedColor: null,
-        },
-        {
-          metallic: 0,
-        },
-        {
-          metallicMap: null,
-        },
-        {
-          roughness: 1,
-        },
-        {
-          roughnessMap: null,
-        },
-        {
-          opacity: null,
-        },
-      ],
-      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
-    },
-    {
-      name: '13___Default',
-      parameters: [
-        {
-          baseColor: [
+          baseColorFactor: [
             1,
             1,
             1,
@@ -55,31 +12,57 @@
           ],
         },
         {
-          baseColorMap: 'Horse_v01',
+          baseColor: '82a475fe7728b25303a03d6621ff65642f83b0e8',
         },
         {
-          normalMap: null,
+          diffuseColorFactor: null,
         },
         {
-          interpolatedColor: null,
+          diffuseColor: null,
         },
         {
-          metallic: 0,
+          normal: null,
         },
         {
-          metallicMap: null,
+          metallicFactor: 0,
         },
         {
-          roughness: 1,
+          roughnessFactor: 0.89459100000000003,
         },
         {
-          roughnessMap: null,
+          specularFactor: null,
+        },
+        {
+          glossinessFactor: null,
+        },
+        {
+          specularGlossiness: null,
+        },
+        {
+          specularGlossinessCalculation: null,
+        },
+        {
+          metallicRoughness: null,
+        },
+        {
+          occlusion: null,
+        },
+        {
+          emissiveFactor: [
+            0,
+            0,
+            0,
+            1,
+          ],
+        },
+        {
+          emissive: null,
         },
         {
           opacity: null,
         },
       ],
-      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+      source: 'build/sceneform_sdk/default_materials/gltf_material.sfm',
     },
   ],
   model: {
@@ -87,20 +70,17 @@
       'Position',
       'TexCoord',
       'Orientation',
-      'BoneIndices',
-      'BoneWeights',
     ],
     collision: {},
-    file: 'sampledata/rendered/horse.fbx',
+    file: 'sampledata/rendered/horse.glb',
     name: 'horse',
     recenter: 'root',
-    scale: 0.023441,
+    scale: 0.007487000000000003,
   },
   samplers: [
     {
-      file: 'sampledata/horse/Horse_v01.jpg',
-      name: 'Horse_v01',
-      pipeline_name: '/home/krishna/StudioProjects/atmanirbhar-team-jc/app/sampledata/horse/Horse_v01.jpg',
+      name: '82a475fe7728b25303a03d6621ff65642f83b0e8',
+      pipeline_name: '*0',
     },
   ],
   version: '0.54:2',

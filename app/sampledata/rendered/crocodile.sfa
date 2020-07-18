@@ -1,0 +1,74 @@
+{
+  animations: [
+    {
+      path: 'sampledata/rendered/crocodile.fbx',
+    },
+  ],
+  materials: [
+    {
+      name: '14___Default.001',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: '12262_Crocodile_diff',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+      'BoneIndices',
+      'BoneWeights',
+    ],
+    collision: {},
+    file: 'sampledata/rendered/crocodile.fbx',
+    name: 'crocodile',
+    recenter: 'root',
+    scale: 0.011617999999999999,
+  },
+  samplers: [
+    {
+      file: '/media/krishna/storage/Downloads/3d models/croc/12262_Crocodile_diff.jpg',
+      name: '12262_Crocodile_diff',
+      pipeline_name: '/media/krishna/storage/Downloads/3d models/croc/12262_Crocodile_diff.jpg',
+    },
+    {
+      file: '/media/krishna/storage/Downloads/3d models/croc/12262_Crocodile_spec.jpg',
+      name: '12262_Crocodile_spec',
+      pipeline_name: '/media/krishna/storage/Downloads/3d models/croc/12262_Crocodile_spec.jpg',
+    },
+  ],
+  version: '0.54:2',
+}

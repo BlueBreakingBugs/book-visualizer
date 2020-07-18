@@ -1,15 +1,10 @@
 {
-  animations: [
-    {
-      path: 'sampledata/rendered/beagal.fbx',
-    },
-  ],
   materials: [
     {
-      name: '13041',
+      name: '13041.001',
       parameters: [
         {
-          baseColor: [
+          baseColorFactor: [
             1,
             1,
             1,
@@ -17,31 +12,57 @@
           ],
         },
         {
-          baseColorMap: '13041_Beagle_diffuse',
+          baseColor: 'a120ab31a73d381da8aa982c4bc2c55faf56107e',
         },
         {
-          normalMap: null,
+          diffuseColorFactor: null,
         },
         {
-          interpolatedColor: null,
+          diffuseColor: null,
         },
         {
-          metallic: 0,
+          normal: null,
         },
         {
-          metallicMap: null,
+          metallicFactor: 0,
         },
         {
-          roughness: 1,
+          roughnessFactor: 0.89459100000000003,
         },
         {
-          roughnessMap: null,
+          specularFactor: null,
+        },
+        {
+          glossinessFactor: null,
+        },
+        {
+          specularGlossiness: null,
+        },
+        {
+          specularGlossinessCalculation: null,
+        },
+        {
+          metallicRoughness: null,
+        },
+        {
+          occlusion: null,
+        },
+        {
+          emissiveFactor: [
+            0,
+            0,
+            0,
+            1,
+          ],
+        },
+        {
+          emissive: null,
         },
         {
           opacity: null,
         },
       ],
-      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+      source: 'build/sceneform_sdk/default_materials/gltf_material.sfm',
     },
   ],
   model: {
@@ -49,20 +70,17 @@
       'Position',
       'TexCoord',
       'Orientation',
-      'BoneIndices',
-      'BoneWeights',
     ],
     collision: {},
-    file: 'sampledata/rendered/beagal.fbx',
-    name: 'beagal',
+    file: 'sampledata/rendered/beagle.glb',
+    name: 'beagle',
     recenter: 'root',
-    scale: 0.084356,
+    scale: 0.012178,
   },
   samplers: [
     {
-      file: 'sampledata/beagle/13041_Beagle_diffuse.jpg',
-      name: '13041_Beagle_diffuse',
-      pipeline_name: '/home/krishna/StudioProjects/atmanirbhar-team-jc/app/sampledata/beagle/13041_Beagle_diffuse.jpg',
+      name: 'a120ab31a73d381da8aa982c4bc2c55faf56107e',
+      pipeline_name: '*0',
     },
   ],
   version: '0.54:2',

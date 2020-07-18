@@ -56,7 +56,7 @@
     file: 'sampledata/rendered/brain.fbx',
     name: 'brain',
     recenter: 'root',
-    scale: 0.074669999999999997,
+    scale: 0.904669999999999997,
   },
   version: '0.54:2',
 }

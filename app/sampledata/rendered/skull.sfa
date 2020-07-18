@@ -1,53 +1,10 @@
 {
-  animations: [
-    {
-      path: 'sampledata/rendered/skull.fbx',
-    },
-  ],
   materials: [
     {
-      name: 'Material',
+      name: '12140_Skull_v3.001',
       parameters: [
         {
-          baseColor: [
-            0.80000000000000004,
-            0.80000000000000004,
-            0.80000000000000004,
-            1,
-          ],
-        },
-        {
-          baseColorMap: null,
-        },
-        {
-          normalMap: null,
-        },
-        {
-          interpolatedColor: null,
-        },
-        {
-          metallic: 0,
-        },
-        {
-          metallicMap: null,
-        },
-        {
-          roughness: 1,
-        },
-        {
-          roughnessMap: null,
-        },
-        {
-          opacity: null,
-        },
-      ],
-      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
-    },
-    {
-      name: '12140_Skull_v3',
-      parameters: [
-        {
-          baseColor: [
+          baseColorFactor: [
             1,
             1,
             1,
@@ -55,31 +12,57 @@
           ],
         },
         {
-          baseColorMap: 'Skull',
+          baseColor: '54228cd857a08ebaa505f77334fab3e3dcac631d',
         },
         {
-          normalMap: null,
+          diffuseColorFactor: null,
         },
         {
-          interpolatedColor: null,
+          diffuseColor: null,
         },
         {
-          metallic: 0,
+          normal: null,
         },
         {
-          metallicMap: null,
+          metallicFactor: 0,
         },
         {
-          roughness: 1,
+          roughnessFactor: 0.83670100000000003,
         },
         {
-          roughnessMap: null,
+          specularFactor: null,
+        },
+        {
+          glossinessFactor: null,
+        },
+        {
+          specularGlossiness: null,
+        },
+        {
+          specularGlossinessCalculation: null,
+        },
+        {
+          metallicRoughness: null,
+        },
+        {
+          occlusion: null,
+        },
+        {
+          emissiveFactor: [
+            0,
+            0,
+            0,
+            1,
+          ],
+        },
+        {
+          emissive: null,
         },
         {
           opacity: null,
         },
       ],
-      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+      source: 'build/sceneform_sdk/default_materials/gltf_material.sfm',
     },
   ],
   model: {
@@ -87,20 +70,17 @@
       'Position',
       'TexCoord',
       'Orientation',
-      'BoneIndices',
-      'BoneWeights',
     ],
     collision: {},
-    file: 'sampledata/rendered/skull.fbx',
+    file: 'sampledata/rendered/skull.glb',
     name: 'skull',
     recenter: 'root',
-    scale: 0.05080500000000001,
+    scale: 0.060080500000000001,
   },
   samplers: [
     {
-      file: 'sampledata/skull/Skull.jpg',
-      name: 'Skull',
-      pipeline_name: '/home/krishna/StudioProjects/atmanirbhar-team-jc/app/sampledata/skull/Skull.jpg',
+      name: '54228cd857a08ebaa505f77334fab3e3dcac631d',
+      pipeline_name: '*0',
     },
   ],
   version: '0.54:2',

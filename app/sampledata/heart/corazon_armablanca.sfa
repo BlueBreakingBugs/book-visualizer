@@ -94,7 +94,7 @@
     file: 'sampledata/heart/corazon_armablanca.fbx',
     name: 'corazon_armablanca',
     recenter: 'root',
-    scale: 0.92395700000000003,
+    scale: 0.72395700000000003,
   },
   samplers: [
     {
