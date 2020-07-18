@@ -1,0 +1,107 @@
+{
+  animations: [
+    {
+      path: 'sampledata/heart/corazon_armablanca.fbx',
+    },
+  ],
+  materials: [
+    {
+      name: 'Map',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'corazon_armablanca_low',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: '02 - Default',
+      parameters: [
+        {
+          baseColor: [
+            0,
+            0,
+            0,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+      'BoneIndices',
+      'BoneWeights',
+    ],
+    collision: {},
+    file: 'sampledata/heart/corazon_armablanca.fbx',
+    name: 'corazon_armablanca',
+    recenter: 'root',
+    scale: 0.92395700000000003,
+  },
+  samplers: [
+    {
+      file: 'sampledata/heart/corazon_armablanca.fbm/corazon_armablanca_low.jpg',
+      name: 'corazon_armablanca_low',
+      pipeline_name: 'corazon_armablanca.fbm/corazon_armablanca_low.jpg',
+    },
+  ],
+  version: '0.54:2',
+}

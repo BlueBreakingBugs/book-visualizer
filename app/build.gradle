@@ -67,3 +67,9 @@ sceneform.asset('sampledata/skull/12140_Skull_v3_L2.obj',
         'default',
         'sampledata/skull/12140_Skull_v3_L2.sfa',
         'src/main/assets/12140_Skull_v3_L2')
+
+
+sceneform.asset('sampledata/heart/corazon_armablanca.fbx',
+        'default',
+        'sampledata/heart/corazon_armablanca.sfa',
+        'src/main/assets/corazon_armablanca')
