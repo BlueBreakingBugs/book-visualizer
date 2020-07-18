@@ -10,12 +10,10 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.joblesscoders.arbook.R;
-import com.joblesscoders.arbook.ar.ARActivity;
-import com.joblesscoders.arbook.book.RecyclerViewAdapter;
+import com.joblesscoders.arbook.ar.AugmentedImagesActivity;
 import com.joblesscoders.arbook.pojo.Book;
 import com.joblesscoders.arbook.pojo.Contents;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class BookActivity extends AppCompatActivity {
@@ -69,7 +67,7 @@ public class BookActivity extends AppCompatActivity {
     }
 
     public void startARSession(View view) {
-        Intent intent = new Intent(this, ARActivity.class);
+        Intent intent = new Intent(this, AugmentedImagesActivity.class);
         intent.putExtra("book",book);
         startActivity(intent);
     }

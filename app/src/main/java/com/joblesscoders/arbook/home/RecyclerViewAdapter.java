@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 
+import com.bumptech.glide.load.resource.drawable.GlideDrawable;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
 import com.joblesscoders.arbook.R;
@@ -55,8 +56,21 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter {
         ((BookHolder) holder).bookpublisher.setText(book.getPublisher()+"");
         ((BookHolder) holder).isbn.setText("ISBN : "+book.getIsbn()+"");
 
+        RecyclerView.ViewHolder finalHolder = holder;
         Glide.with(context)
                 .load(book.getThumbnail())
+                .listener(new RequestListener<String, GlideDrawable>() {
+                    @Override
+                    public boolean onException(Exception e, String model, Target<GlideDrawable> target, boolean isFirstResource) {
+                        return false;
+                    }
+
+                    @Override
+                    public boolean onResourceReady(GlideDrawable resource, String model, Target<GlideDrawable> target, boolean isFromMemoryCache, boolean isFirstResource) {
+                        ((BookHolder) finalHolder).bookpic.setBackground(null);
+                        return false;
+                    }
+                })
                 .into(((BookHolder) holder).bookpic);
 
         ((BookHolder) holder).selectad.setOnClickListener(v -> {
