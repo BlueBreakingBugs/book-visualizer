@@ -12,6 +12,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.drawable.GlideDrawable;
+import com.bumptech.glide.request.RequestListener;
+import com.bumptech.glide.request.target.Target;
 import com.google.zxing.integration.android.IntentResult;
 import com.joblesscoders.arbook.R;
 import com.joblesscoders.arbook.details.DetailsActivity;
@@ -57,8 +60,21 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter {
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             context.startActivity(intent);
         });
+        RecyclerView.ViewHolder finalHolder = holder;
         Glide.with(context)
                 .load(content.getThumbnail())
+                .listener(new RequestListener<String, GlideDrawable>() {
+                    @Override
+                    public boolean onException(Exception e, String model, Target<GlideDrawable> target, boolean isFirstResource) {
+                        return false;
+                    }
+
+                    @Override
+                    public boolean onResourceReady(GlideDrawable resource, String model, Target<GlideDrawable> target, boolean isFromMemoryCache, boolean isFirstResource) {
+                        ((ContentHolder) finalHolder).thumb.setBackground(null);
+                        return false;
+                    }
+                })
                 .into(((ContentHolder) holder).thumb);
 
     }

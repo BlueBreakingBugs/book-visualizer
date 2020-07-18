@@ -86,7 +86,7 @@ public class AugmentedImagesActivity extends AppCompatActivity {
                     // Create a new anchor for newly found images.
                     if (!augmentedImageMap.containsKey(augmentedImage)) {
                         String name = augmentedImage.getName().toLowerCase().substring(0,augmentedImage.getName().lastIndexOf('.'));
-                        Toast.makeText(this, name+"", Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(this, name+"", Toast.LENGTH_SHORT).show();
                         Log.e("hello",name);
 
                         AugmentedImageNode node = new AugmentedImageNode(this,arFragment, name+".sfb");

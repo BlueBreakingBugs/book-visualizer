@@ -35,7 +35,7 @@ public class BookActivity extends AppCompatActivity {
         }
 
         contentsList = book.getContents();
-        contentsList.addAll(book.getContents());
+        //contentsList.addAll(book.getContents());
         initToolbar();
         initRecyclerView();
     }

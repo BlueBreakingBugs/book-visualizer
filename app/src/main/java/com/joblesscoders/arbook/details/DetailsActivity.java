@@ -84,8 +84,8 @@ public class DetailsActivity extends AppCompatActivity {
 
     private void addToScene(ModelRenderable renderable, Contents content) {
         node = new RotatingNode(true, false, 0);
-//        node.setRenderable(renderable);
-        setColorTint(renderable, node);
+      node.setRenderable(renderable);
+       // setColorTint(renderable, node);
         node.setParent(mScene);
         float scale[] = content.getScale();
         Log.e("DetailsActivity", Arrays.toString(scale));

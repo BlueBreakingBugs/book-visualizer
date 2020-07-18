@@ -77,8 +77,8 @@ public class ARSceneActivity extends AppCompatActivity {
                     TransformableNode andy = new TransformableNode(arFragment.getTransformationSystem());
                     andy.setParent(anchorNode);
                     andy.setRenderable(andyRenderable);
-                    andy.setLocalPosition(new Vector3(0,0.25f,0));
-                    andy.setLocalRotation(Quaternion.axisAngle(new Vector3(0f, 1f, 0f), 180f));
+                    //andy.setLocalPosition(new Vector3(0,0.25f,0));
+                    //andy.setLocalRotation(Quaternion.axisAngle(new Vector3(0f, 1f, 0f), 180f));
                     andy.select();
                 });
     }
