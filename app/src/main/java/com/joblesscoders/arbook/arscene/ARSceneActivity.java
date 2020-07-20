@@ -51,7 +51,7 @@ public class ARSceneActivity extends AppCompatActivity {
         // When you build a Renderable, Sceneform loads its resources in the background while returning
         // a CompletableFuture. Call thenAccept(), handle(), or check isDone() before calling get().
         ModelRenderable.builder()
-                .setSource(this, Uri.parse(content.getTitle().toLowerCase()+".sfb"))
+                .setSource(this, Uri.parse(content.getLink().toLowerCase()+".sfb"))
                 .build()
                 .thenAccept(renderable -> andyRenderable = renderable)
                 .exceptionally(
@@ -105,8 +105,9 @@ public class ARSceneActivity extends AppCompatActivity {
                             andy.getScaleController().setMinScale(0.1f);
                             break;
                     }*/
-                    andy.getScaleController().setMaxScale(content.getScale()[1]);
-                    andy.getScaleController().setMinScale(content.getScale()[0]);
+                    float percentage[] = content.getPercentage();
+                    andy.getScaleController().setMaxScale(percentage[2]*content.getScale()[1]);
+                    andy.getScaleController().setMinScale(percentage[2]*content.getScale()[0]);
 
                     //andy.setLocalScale(new Vector3(0.02f,0.02f,0.02f));
                     //andy.setLocalScale(new Vector3(content.getScale()[0],content.getScale()[1],content.getScale()[3]));

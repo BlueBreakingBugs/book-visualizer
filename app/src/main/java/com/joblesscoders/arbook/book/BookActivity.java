@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.joblesscoders.arbook.R;
-import com.joblesscoders.arbook.ar.AugmentedImagesActivity;
+import com.joblesscoders.arbook.augimg.AugmentedImagesActivity;
 import com.joblesscoders.arbook.pojo.Book;
 import com.joblesscoders.arbook.pojo.Contents;
 

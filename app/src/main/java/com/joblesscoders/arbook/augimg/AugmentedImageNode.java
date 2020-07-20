@@ -1,4 +1,4 @@
-package com.joblesscoders.arbook.ar;
+package com.joblesscoders.arbook.augimg;
 
 import android.content.Context;
 import android.net.Uri;
@@ -7,7 +7,6 @@ import android.widget.Toast;
 
 import com.google.ar.core.AugmentedImage;
 import com.google.ar.sceneform.AnchorNode;
-import com.google.ar.sceneform.Node;
 import com.google.ar.sceneform.math.Vector3;
 import com.google.ar.sceneform.rendering.ModelRenderable;
 import com.google.ar.sceneform.ux.ArFragment;
@@ -70,9 +69,10 @@ public class AugmentedImageNode extends AnchorNode {
     localPosition.set(0, 0.01f, 0);
 
     cornerNode = new TransformableNode(arFragment.getTransformationSystem());
-    Toast.makeText(context, contents.getScale()[0]+"", Toast.LENGTH_SHORT).show();
-    cornerNode.getScaleController().setMaxScale(contents.getScale()[1]);
-    cornerNode.getScaleController().setMinScale(contents.getScale()[0]);
+    float percentage[] = contents.getPercentage();
+    //Toast.makeText(context, contents.getScale()[0]+"", Toast.LENGTH_SHORT).show();
+    cornerNode.getScaleController().setMaxScale(percentage[1]*contents.getScale()[1]);
+    cornerNode.getScaleController().setMinScale(percentage[1]*contents.getScale()[0]);
    // cornerNode.setLocalScale(new Vector3(0.05f,0.05f,0.05f));
     cornerNode.setParent(this);
     cornerNode.setLocalPosition(localPosition);

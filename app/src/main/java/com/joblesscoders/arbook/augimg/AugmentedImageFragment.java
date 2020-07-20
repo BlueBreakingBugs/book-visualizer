@@ -1,4 +1,4 @@
-package com.joblesscoders.arbook.ar;
+package com.joblesscoders.arbook.augimg;
 
 import android.app.ActivityManager;
 import android.content.Context;

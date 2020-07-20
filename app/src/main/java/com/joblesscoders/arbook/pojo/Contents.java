@@ -8,7 +8,16 @@ import java.util.List;
 public class Contents implements Parcelable {
     private String _id,description,title,thumbnail,link,type;
     private List<String> additional_link;
+    private float[] percentage;
     private float[] scale;;
+
+    public String get_id() {
+        return _id;
+    }
+
+    public float[] getPercentage() {
+        return percentage;
+    }
 
     protected Contents(Parcel in) {
         _id = in.readString();
@@ -19,6 +28,7 @@ public class Contents implements Parcelable {
         type = in.readString();
         additional_link = in.createStringArrayList();
         scale = in.createFloatArray();
+        percentage = in.createFloatArray();
     }
 
     public static final Creator<Contents> CREATOR = new Creator<Contents>() {
@@ -80,5 +90,6 @@ public class Contents implements Parcelable {
         parcel.writeString(type);
         parcel.writeStringList(additional_link);
         parcel.writeFloatArray(scale);
+        parcel.writeFloatArray(percentage);
     }
 }

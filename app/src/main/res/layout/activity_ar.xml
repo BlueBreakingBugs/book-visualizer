@@ -3,8 +3,8 @@
 xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
-tools:context=".ar.AugmentedImagesActivity">
-<fragment android:name="com.joblesscoders.arbook.ar.AugmentedImageFragment"
+tools:context=".augimg.AugmentedImagesActivity">
+<fragment android:name="com.joblesscoders.arbook.augimg.AugmentedImageFragment"
     android:id="@+id/ux_fragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent" />

@@ -63,7 +63,7 @@ public class DetailsActivity extends AppCompatActivity {
        // progressDialog.show();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             ModelRenderable.builder()
-                    .setSource(this, Uri.parse(content.getTitle().toLowerCase()+".sfb"))
+                    .setSource(this, Uri.parse(content.getLink().toLowerCase()+".sfb"))
                     .build()
                     .thenAccept(renderable ->{
                         addToScene(renderable, content);
@@ -88,8 +88,10 @@ public class DetailsActivity extends AppCompatActivity {
        // setColorTint(renderable, node);
         node.setParent(mScene);
         float scale[] = content.getScale();
-        Log.e("DetailsActivity", Arrays.toString(scale));
+        float percentage = content.getPercentage()[0];
 
+        node.setLocalScale(new Vector3(percentage*scale[1],percentage*scale[1],percentage*scale[1]));
+        Log.e("DetailsActivity", Arrays.toString(scale));
         node.setLocalPosition(new Vector3(0f, -.5f, -1f));
         mScene.addChild(node);
     }
@@ -132,11 +134,6 @@ public class DetailsActivity extends AppCompatActivity {
     public void inflateViewData() {
         ((TextView)findViewById(R.id.title)).setText(content.getTitle());
         ((TextView)findViewById(R.id.description)).setText(content.getDescription());
-/*
-        Glide
-            .with(this)
-            .load(content.getThumbnail())
-            .into((ImageView) findViewById(R.id.content_thumb));*/
     }
     public void initToolbar() {
         findViewById(R.id.toolbar);
