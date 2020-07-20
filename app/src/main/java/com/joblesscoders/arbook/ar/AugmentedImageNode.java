@@ -12,6 +12,7 @@ import com.google.ar.sceneform.math.Vector3;
 import com.google.ar.sceneform.rendering.ModelRenderable;
 import com.google.ar.sceneform.ux.ArFragment;
 import com.google.ar.sceneform.ux.TransformableNode;
+import com.joblesscoders.arbook.pojo.Contents;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -24,12 +25,14 @@ public class AugmentedImageNode extends AnchorNode {
   private String modelname;
   private Context context;
   private ArFragment arFragment;
+  private Contents contents;
 
   private CompletableFuture<ModelRenderable> model;
 
-  public AugmentedImageNode(Context context, ArFragment arFragment, String modelname) {
+  public AugmentedImageNode(Context context, ArFragment arFragment, String modelname, Contents contents) {
     this.modelname = modelname;
     this.context = context;
+    this.contents = contents;
     this.arFragment = arFragment;
     // Upon construction, start loading the models for the corners of the frame.
     if (model == null) {
@@ -64,10 +67,13 @@ public class AugmentedImageNode extends AnchorNode {
     TransformableNode cornerNode;
 
     // Upper left corner.
-    localPosition.set(0, 0.25f, 0);
+    localPosition.set(0, 0.01f, 0);
 
     cornerNode = new TransformableNode(arFragment.getTransformationSystem());
-    cornerNode.setLocalScale(new Vector3(0.05f,0.05f,0.05f));
+    Toast.makeText(context, contents.getScale()[0]+"", Toast.LENGTH_SHORT).show();
+    cornerNode.getScaleController().setMaxScale(contents.getScale()[1]);
+    cornerNode.getScaleController().setMinScale(contents.getScale()[0]);
+   // cornerNode.setLocalScale(new Vector3(0.05f,0.05f,0.05f));
     cornerNode.setParent(this);
     cornerNode.setLocalPosition(localPosition);
     cornerNode.setRenderable(model.getNow(null));

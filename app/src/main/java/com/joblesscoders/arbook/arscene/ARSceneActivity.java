@@ -45,6 +45,7 @@ public class ARSceneActivity extends AppCompatActivity {
         }
         setContentView(R.layout.activity_arscene);
         content = getIntent().getParcelableExtra("content");
+
         arFragment = (CustomARFragment) getSupportFragmentManager().findFragmentById(R.id.ux_fragment);
 
         // When you build a Renderable, Sceneform loads its resources in the background while returning
@@ -77,6 +78,38 @@ public class ARSceneActivity extends AppCompatActivity {
                     TransformableNode andy = new TransformableNode(arFragment.getTransformationSystem());
                     andy.setParent(anchorNode);
                     andy.setRenderable(andyRenderable);
+                   /* switch (content.getTitle().toLowerCase())
+                    {
+                        case "skull":
+                            andy.getScaleController().setMaxScale(0.3f);
+                            andy.getScaleController().setMinScale(0.1f);
+                            break;
+                        case "beagle":
+                            andy.getScaleController().setMaxScale(0.4f);
+                            andy.getScaleController().setMinScale(0.3f);
+                            break;
+                        case "crocodile":
+                            andy.getScaleController().setMaxScale(1.0f);
+                            andy.getScaleController().setMinScale(0.7f);
+                            break;
+                        case "brain":
+                            andy.getScaleController().setMaxScale(0.3f);
+                            andy.getScaleController().setMinScale(0.1f);
+                            break;
+                        case "horse":
+                            andy.getScaleController().setMaxScale(0.8f);
+                            andy.getScaleController().setMinScale(0.6f);
+                            break;
+                        case "heart":
+                            andy.getScaleController().setMaxScale(0.3f);
+                            andy.getScaleController().setMinScale(0.1f);
+                            break;
+                    }*/
+                    andy.getScaleController().setMaxScale(content.getScale()[1]);
+                    andy.getScaleController().setMinScale(content.getScale()[0]);
+
+                    //andy.setLocalScale(new Vector3(0.02f,0.02f,0.02f));
+                    //andy.setLocalScale(new Vector3(content.getScale()[0],content.getScale()[1],content.getScale()[3]));
                     //andy.setLocalPosition(new Vector3(0,0.25f,0));
                     //andy.setLocalRotation(Quaternion.axisAngle(new Vector3(0f, 1f, 0f), 180f));
                     andy.select();

@@ -28,13 +28,18 @@ public class AugmentedImagesActivity extends AppCompatActivity {
     private List<Contents> contents;
     private ArFragment arFragment;
     private ImageView fitToScanView;
-    private final Map<AugmentedImage, AugmentedImageNode> augmentedImageMap = new HashMap<>();
+    private  Map<AugmentedImage, AugmentedImageNode> augmentedImageMap = new HashMap<>();
+    private HashMap<String,Contents> contentsHashMap = new HashMap<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ar);
         Book book= getIntent().getParcelableExtra("book");
         contents = book.getContents();
+        for (Contents c:contents)
+        {
+            contentsHashMap.put(c.getTitle().toLowerCase(),c);
+        }
         arFragment = (ArFragment) getSupportFragmentManager().findFragmentById(R.id.ux_fragment);
         fitToScanView = findViewById(R.id.image_view_fit_to_scan);
         arFragment.getArSceneView().getScene().addOnUpdateListener(this::onUpdateFrame);
@@ -89,7 +94,7 @@ public class AugmentedImagesActivity extends AppCompatActivity {
                         //Toast.makeText(this, name+"", Toast.LENGTH_SHORT).show();
                         Log.e("hello",name);
 
-                        AugmentedImageNode node = new AugmentedImageNode(this,arFragment, name+".sfb");
+                        AugmentedImageNode node = new AugmentedImageNode(this,arFragment, name+".sfb",contentsHashMap.get(name));
                         Log.e("model","image found");
                         node.setImage(augmentedImage);
                         augmentedImageMap.put(augmentedImage, node);
