@@ -60,15 +60,12 @@ public class DetailsActivity extends AppCompatActivity {
 
     }
     private void load3dModel() {
-       // progressDialog.show();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             ModelRenderable.builder()
-                    .setSource(this, Uri.parse(content.getLink().toLowerCase()+".sfb"))
+                    .setSource(this, Uri.parse("models/"+content.getLink().toLowerCase()+".sfb"))
                     .build()
                     .thenAccept(renderable ->{
                         addToScene(renderable, content);
-                       // progressDialog.dismiss();
-                        //loading_image.setVisibility(View.GONE);
 
                     })
                     .exceptionally(
@@ -85,7 +82,6 @@ public class DetailsActivity extends AppCompatActivity {
     private void addToScene(ModelRenderable renderable, Contents content) {
         node = new RotatingNode(true, false, 0);
       node.setRenderable(renderable);
-       // setColorTint(renderable, node);
         node.setParent(mScene);
         float scale[] = content.getScale();
         float percentage = content.getPercentage()[0];
@@ -96,12 +92,6 @@ public class DetailsActivity extends AppCompatActivity {
         mScene.addChild(node);
     }
 
-    public void setColorTint(ModelRenderable originalRenderable, RotatingNode node) {
-        ModelRenderable newColorCopyofRenderable = originalRenderable.makeCopy();
-        newColorCopyofRenderable.getMaterial().setFloat3("baseColorTint",
-                new Color(android.graphics.Color.rgb(255,0,0)));
-        node.setRenderable(newColorCopyofRenderable);
-    }
 
     public void rotateModel(RotatingNode node, Contents content) {
         // TODO

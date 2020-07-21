@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.google.ar.core.AugmentedImage;
 import com.google.ar.core.Frame;
@@ -35,6 +36,7 @@ public class AugmentedImagesActivity extends AppCompatActivity {
         contents = book.getContents();
         for (Contents c:contents)
         {
+            Log.e("hellox",c.getLink());
             contentsHashMap.put(c.getLink().toLowerCase(),c);
         }
         arFragment = (ArFragment) getSupportFragmentManager().findFragmentById(R.id.ux_fragment);
@@ -88,9 +90,11 @@ public class AugmentedImagesActivity extends AppCompatActivity {
                     // Create a new anchor for newly found images.
                     if (!augmentedImageMap.containsKey(augmentedImage)) {
                         String name = augmentedImage.getName().toLowerCase().substring(0,augmentedImage.getName().lastIndexOf('.'));
-                        //Toast.makeText(this, name+"", Toast.LENGTH_SHORT).show();
-                       // Log.e("hello",name);
-                        AugmentedImageNode node = new AugmentedImageNode(this,arFragment, name+".sfb",contentsHashMap.get(name));
+                       // Toast.makeText(this, name+"", Toast.LENGTH_SHORT).show();
+                        Log.e("hello",name);
+                        if(contentsHashMap.get(name) == null)
+                            return;
+                        AugmentedImageNode node = new AugmentedImageNode(this,arFragment, "models/"+name+".sfb",contentsHashMap.get(name));
                         node.setImage(augmentedImage);
                         augmentedImageMap.put(augmentedImage, node);
                         arFragment.getArSceneView().getScene().addChild(node);

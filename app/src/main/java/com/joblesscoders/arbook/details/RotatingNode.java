@@ -15,8 +15,7 @@ public class RotatingNode extends Node {
     // We'll use Property Animation to make this node rotate.
     @Nullable
     public ObjectAnimator orbitAnimation = null;
-    private float degreesPerSecond = 90.0f;
-
+    private float degreesPerSecond = 30.0f;
     private boolean isAnimating = true;
     private final boolean isOrbit;
     private final boolean clockwise;

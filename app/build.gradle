@@ -62,11 +62,6 @@ sceneform.asset('sampledata/rendered/beagle.glb',
         'sampledata/rendered/beagle.sfa',
         'src/main/assets/beagle')
 
-sceneform.asset('sampledata/rendered/horse.glb',
-        'default',
-        'sampledata/rendered/horse.sfa',
-        'src/main/assets/horse')
-
 
 sceneform.asset('sampledata/rendered/crocodile.glb',
         'default',

@@ -69,11 +69,12 @@ public class AugmentedImageNode extends AnchorNode {
     localPosition.set(0, 0.01f, 0);
 
     cornerNode = new TransformableNode(arFragment.getTransformationSystem());
-    float percentage[] = contents.getPercentage();
-    //Toast.makeText(context, contents.getScale()[0]+"", Toast.LENGTH_SHORT).show();
-    cornerNode.getScaleController().setMaxScale(percentage[1]*contents.getScale()[1]);
-    cornerNode.getScaleController().setMinScale(percentage[1]*contents.getScale()[0]);
-   // cornerNode.setLocalScale(new Vector3(0.05f,0.05f,0.05f));
+
+      float percentage[] = contents.getPercentage();
+      cornerNode.getScaleController().setMaxScale(percentage[1]*contents.getScale()[1]);
+      cornerNode.getScaleController().setMinScale(percentage[1]*contents.getScale()[0]);
+
+
     cornerNode.setParent(this);
     cornerNode.setLocalPosition(localPosition);
     cornerNode.setRenderable(model.getNow(null));
