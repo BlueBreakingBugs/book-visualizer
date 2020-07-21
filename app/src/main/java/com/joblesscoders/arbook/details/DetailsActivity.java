@@ -92,7 +92,7 @@ public class DetailsActivity extends AppCompatActivity {
 
         node.setLocalScale(new Vector3(percentage*scale[1],percentage*scale[1],percentage*scale[1]));
         Log.e("DetailsActivity", Arrays.toString(scale));
-        node.setLocalPosition(new Vector3(0f, -.5f, -1f));
+        node.setLocalPosition(new Vector3(0f, -.47f, -1.18f));
         mScene.addChild(node);
     }
 
