@@ -4,11 +4,9 @@ Making books un-boring again.
 ## How to use
 ### Step 1
 
-
 Download the apk.
-[
-![Download latest release from here](https://www.batball11.com/images/android_btn.png =300x)](https://github.com/BlueBreakingBugs/book-visualizer/releases/latest/download/ar-book.apk)
 
+[<img src="https://www.batball11.com/images/android_btn.png" data-canonical-src="https://www.batball11.com/images/android_btn.png" width="300" />](https://github.com/BlueBreakingBugs/book-visualizer/releases/latest/download/ar-book.apk)
 ### Step 2
 install and stuff
 ### Step 3
