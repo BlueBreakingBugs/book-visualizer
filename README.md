@@ -3,7 +3,7 @@ Want a closer look at the Organs in our Body or a Pet that you always dreamt for
 
 ## How to use:
 
--  **Step 1**
+-  *Step 1**
 
 Download the apk.
 
@@ -27,3 +27,27 @@ Scan QR codes to add books.
 
 ![Scan to add Sample book 2 (Animals)](https://github.com/BlueBreakingBugs/book-visualizer/raw/master/readme-assets/animal.jpeg)
 
+
+- **Step 4**
+
+While reading the book scan the AR activated/supported images and see them come to life through the App.
+
+### EXAMPLES:
+
+- *Before*
+
+<img src="https://github.com/BlueBreakingBugs/book-visualizer/blob/master/readme-assets/Heart_Book_view.jpeg" width="300" height="500">
+
+- *Through the App*
+
+<img src="https://github.com/BlueBreakingBugs/book-visualizer/blob/master/readme-assets/Heart_AR_view1.jpeg" width="300" height="500">  <img src="https://github.com/BlueBreakingBugs/book-visualizer/blob/master/readme-assets/Heart_AR_View2.jpeg" width="300" height="500">
+
+---
+
+- *Before*
+
+<img src="https://github.com/BlueBreakingBugs/book-visualizer/blob/master/readme-assets/Dinosaur_book_view.jpeg" width="300" height="500">
+
+- *Through the App*
+
+<img src="https://github.com/BlueBreakingBugs/book-visualizer/blob/master/readme-assets/Dinosaur_AR_view.jpeg" width="300" height="500">  
