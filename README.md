@@ -1,5 +1,5 @@
 # Welcome to AR-Books
-Making books unboring again.
+Making books un-boring again.
 
 ## How to use
 ### Step 1
