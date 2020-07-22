@@ -1,5 +1,5 @@
 # Welcome to AR-Books
-Making books un-boring again.
+Want a closer look at the Organs in our Body or a Pet that you always dreamt for? Here is an app that will bring life to the boring books that you have been reading!
 
 ## How to use:
 
@@ -11,7 +11,8 @@ Download the apk.
 
 - **Step 2**
 
-Install and stuff
+Install the Apk in your AR supported Phone. If your phone does not support AR you will be able to see only the 3D Models of the images in the book.
+No Worries Here is the video Demo:
 
 - **Step 3**
 
