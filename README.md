@@ -28,6 +28,7 @@ Scan QR codes to add books.
 ![Scan to add Sample book 2 (Animals)](https://github.com/BlueBreakingBugs/book-visualizer/raw/master/readme-assets/animal.jpeg)
 
 
+##
 ### Step 4
 
 While reading the book, scan the AR activated/supported images and see them come to life through our app.
